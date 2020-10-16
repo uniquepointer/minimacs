@@ -1,3 +1,5 @@
+;;Shit I did not set
+;; ================================================================================================================================================================================
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -51,7 +53,7 @@
     (cons 340 "#767676")
     (cons 360 "#767676")))
  '(vc-annotate-very-old-color nil))
-(custom-set-faces
+ (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
@@ -65,9 +67,10 @@
  '(org-level-6 ((t (:inherit default :weight bold :foreground "#dddddd" :family "Sans Serif"))))
  '(org-level-7 ((t (:inherit default :weight bold :foreground "#dddddd" :family "Sans Serif"))))
  '(org-level-8 ((t (:inherit default :weight bold :foreground "#dddddd" :family "Sans Serif")))))
+ ;; ================================================================================================================================================================================
 
-;;Package shit ----------------------
-
+;;Packages
+;; ================================================================================================================================================================================
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 ;; Comment/uncomment this line to enable MELPA Stable if desired.  See `package-archive-priorities`
@@ -75,8 +78,6 @@
 ;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 
-;;dependencies
-;--------------------------------------------------------
 ;; Declare packages
 (setq my-packages
       '(all-the-icons
@@ -110,43 +111,9 @@
   (unless (package-installed-p pkg)
     (package-install pkg)))
 
-;; (desktop-save-mode 1)
-
-;; Visual stuff
-;; --------------
-(require 'dashboard)
-(dashboard-setup-startup-hook)
-(setq initial-buffer-choice (lambda () (get-buffer "*dashboard*")))
-;; Set the title
-(setq dashboard-banner-logo-title "Welcome to Emacs Dashboard")
-;; Set the banner
-(setq dashboard-startup-banner "~/.emacs.d/epics/vodka.png")
-;; Value can be
-;; 'official which displays the official emacs logo
-;; 'logo which displays an alternative emacs logo
-;; 1, 2 or 3 which displays one of the text banners
-;; "path/to/your/image.png" which displays whatever image you would prefer
-
-;; Content is not centered by default. To center, set
-(setq dashboard-center-content t)
-(beacon-mode 1)
-
-;; Key stuff
-;; --------------
-;; To disable shortcut "jump" indicators for each section, set
-(setq dashboard-show-shortcuts nil)
-(global-display-line-numbers-mode)
-(electric-pair-mode)
-(autoload 'enable-paredit-mode "paredit"
-  "Turn on pseudo-structural editing of Lisp code."
-  t)
-(add-hook 'emacs-lisp-mode-hook       'enable-paredit-mode)
-(add-hook 'lisp-mode-hook             'enable-paredit-mode)
-(add-hook 'lisp-interaction-mode-hook 'enable-paredit-mode)
-(add-hook 'haskell-mode-hook           'enable-paredit-mode)
-
-;;haskell shit 
-;;--------------
+;;Porgramming modes
+; ---------------------------------------------------------------------------------
+;;haskell
 (eval-after-load "haskell-mode"
     '(define-key haskell-mode-map (kbd "C-c C-c") 'haskell-compile))
 
@@ -164,26 +131,8 @@
 (define-key haskell-mode-map (kbd "C-c C-k") 'haskell-interactive-mode-clear)
 ;;(define-key haskell-mode-map (kbd "C-c c") 'haskell-process-cabal)
 
-
-;;doom modeline 
-;;---------------
-(require 'doom-modeline)
-(doom-modeline-mode 1)
-
-;;emojify
-;; ---------
-(add-hook 'after-init-hook #'global-emojify-mode)
-
-;;indentantion
-;; ---------
-(add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
-(setq highlight-indent-guides-method 'column)
-
-;;highlight
-;;------
-
 ;;ORG MODE
-;; -------------------------
+;; ---------------------------------------------------------------------------------
 (require 'org-superstar)
 (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
 
@@ -206,4 +155,56 @@
                           `(org-level-1 ((t (,@headline ,@variable-tuple :height 1.75))))
                           `(org-document-title ((t (,@headline ,@variable-tuple :height 1.5 :underline nil))))))
 
-(setq org-hide-emphasis-markers t)                          
+(setq org-hide-emphasis-markers t)
+
+;;Random editing stuff
+; ---------------------------------------------------------------------------------
+;; To disable shortcut "jump" indicators for each section, set
+(setq dashboard-show-shortcuts nil)
+(global-display-line-numbers-mode)
+(electric-pair-mode)
+(autoload 'enable-paredit-mode "paredit"
+  "Turn on pseudo-structural editing of Lisp code."
+  t)
+(add-hook 'emacs-lisp-mode-hook       'enable-paredit-mode)
+(add-hook 'lisp-mode-hook             'enable-paredit-mode)
+(add-hook 'lisp-interaction-mode-hook 'enable-paredit-mode)
+(add-hook 'haskell-mode-hook           'enable-paredit-mode)
+;; ================================================================================================================================================================================
+
+;;Visual stuff
+; ================================================================================================================================================================================
+;;Dashboard
+;; ---------------------------------------------------------------------------------
+(require 'dashboard)
+(dashboard-setup-startup-hook)
+(setq initial-buffer-choice (lambda () (get-buffer "*dashboard*")))
+;; Set the title
+(setq dashboard-banner-logo-title "Welcome to Emacs Dashboard")
+;; Set the banner
+(setq dashboard-startup-banner "~/.emacs.d/epics/vodka.png")
+;; Value can be
+;; 'official which displays the official emacs logo
+;; 'logo which displays an alternative emacs logo
+;; 1, 2 or 3 which displays one of the text banners
+;; "path/to/your/image.png" which displays whatever image you would prefer
+
+;; Content is not centered by default. To center, set
+(setq dashboard-center-content t)
+(beacon-mode 1)
+
+;;doom modeline 
+;; ---------------------------------------------------------------------------------
+(require 'doom-modeline)
+(doom-modeline-mode 1)
+
+;;emojify
+;; ---------------------------------------------------------------------------------
+(add-hook 'after-init-hook #'global-emojify-mode)
+
+;;indentantion
+;; 
+(add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
+(setq highlight-indent-guides-method 'column)
+
+;================================================================================================================================================================================
