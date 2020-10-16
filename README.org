@@ -1,7 +1,7 @@
 * Hermesmacs
-  https://img.shields.io/badge/memes%20everywhere-aw%20man-blueviolet
-
   The comfiest emacs config, not really but lets pretend.
 
   I don't know what im doing send help.
 
+** Why?
+   LEAVE ME ALONE
