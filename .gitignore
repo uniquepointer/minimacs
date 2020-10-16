@@ -1,0 +1,14 @@
+### Emacs ###
+# -*- mode: gitignore; -*-
+auto-save-list
+.cache
+elpa
+emojis
+transient
+.#.gitignore
+bookmarks
+history
+recentf
+recentf~
+Witchmacs-theme.el
+.gitignore~
