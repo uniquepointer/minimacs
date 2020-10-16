@@ -1,0 +1,3 @@
+* Hermesmacs
+The comfiest emacs config, not really but lets pretend.
+* Hermesmacs
