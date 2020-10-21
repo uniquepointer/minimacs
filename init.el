@@ -74,7 +74,7 @@
 (require 'package)
 
 ; list the packages you want
-(setq package-list '(all-the-icons use-package elpy beacon cherry-blossom-theme clues-theme company company-quickhelp dashboard doom-modeline doom-themes emojify emojify-logos helpful highlight-indent-guides magit minibuffer-complete-cycle paredit paredit-everywhere projectile treemacs treemacs-all-the-icons treemacs-magit))
+(setq package-list '(org-superstar all-the-icons use-package elpy beacon cherry-blossom-theme clues-theme company company-quickhelp dashboard doom-modeline doom-themes emojify emojify-logos helpful highlight-indent-guides magit minibuffer-complete-cycle paredit paredit-everywhere projectile treemacs treemacs-all-the-icons treemacs-magit))
 
 ; list the repositories containing them
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
