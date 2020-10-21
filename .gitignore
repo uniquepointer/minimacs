@@ -5,6 +5,7 @@ auto-save-list
 elpa
 emojis
 transient
+.gitignore
 .#.gitignore
 bookmarks
 history
